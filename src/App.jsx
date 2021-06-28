@@ -4,20 +4,24 @@ import { Canvas } from "@react-three/fiber";
 
 import "./App.css";
 import { Earth } from "./components/earth";
+import { TopSection } from "./components/Top Section";
 
 const CanvasContainer = styled.div`
   width: 100%;
-  height: 100%
+  height: 100%;
 `;
 
 function App() {
-  return <CanvasContainer>
-    <Canvas>
-      <Suspense fallback={null}>
-        <Earth />
-      </Suspense>
-    </Canvas>
-  </CanvasContainer>;
+  return (
+    <CanvasContainer>
+      <TopSection />
+      <Canvas>
+        <Suspense fallback={null}>
+          <Earth />
+        </Suspense>
+      </Canvas>
+    </CanvasContainer>
+  );
 }
 
 export default App;
